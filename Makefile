@@ -6,7 +6,7 @@
 #    By: tstacul <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 13:15:25 by tstacul           #+#    #+#              #
-#    Updated: 2024/05/06 19:00:06 by tstacul          ###   ########.fr        #
+#    Updated: 2024/06/26 23:32:06 by tstacul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libftprintf.a
@@ -27,12 +27,12 @@ $(NAME) : $(OFILES)
 	ar -rcs $(NAME) $(OFILES)
 %.o: %.c
 	$(COMPILER) $(CFLAGS) -c $< -o $@
-clean :
+clean:
 	rm -f  $(OFILES)
 
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
-.PHONY: all, clean, fcleaen, re
+.PHONY: all, clean, fclean, re
