@@ -6,10 +6,10 @@
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 20:43:56 by tstacul           #+#    #+#             */
-/*   Updated: 2024/06/19 13:33:14 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/06/19 16:12:33 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "printf.h"
 
 void	ft_putchar_len(char c, int	*len)
 {

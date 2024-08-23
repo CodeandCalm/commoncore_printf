@@ -5,11 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:53:30 by tstacul           #+#    #+#             */
-/*   Updated: 2024/05/06 18:42:03 by tstacul          ###   ########.fr       */
+/*   Created: 2024/06/19 13:37:20 by tstacul           #+#    #+#             */
+/*   Updated: 2024/08/23 10:52:20 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "printf.h"
 
 //%d
 void	ft_number(int number, int *length)
@@ -34,12 +34,11 @@ void	ft_number(int number, int *length)
 }
 
 //%p
-
 void	ft_pointer(size_t pointer, int *length)
 {
-	char	string[25];
-	int		i;
+	char	string [25];
 	char	*base_character;
+	int		i;
 
 	base_character = "0123456789abcdef";
 	i = 0;
@@ -63,7 +62,6 @@ void	ft_pointer(size_t pointer, int *length)
 }
 
 // x or X
-
 void	ft_hexadecimal(unsigned int x, int *length, char x_or_x)
 {
 	char	string[25];
@@ -89,8 +87,6 @@ void	ft_hexadecimal(unsigned int x, int *length, char x_or_x)
 	while (i--)
 		ft_putchar_len(string[i], length);
 }
-
-//unsigned int
 
 void	ft_unsigned_int(unsigned int u, int *length)
 {

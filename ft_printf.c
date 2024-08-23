@@ -5,11 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 23:38:03 by tstacul           #+#    #+#             */
-/*   Updated: 2024/05/06 18:57:00 by tstacul          ###   ########.fr       */
+/*   Created: 2024/06/19 13:38:22 by tstacul           #+#    #+#             */
+/*   Updated: 2024/06/19 17:39:49 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+
+#include "printf.h"
 
 static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
 {
@@ -33,7 +34,7 @@ static void	ft_printf_checker(char s, va_list *args, int *len, int *i)
 		(*i)--;
 }
 
-int	ft_printf(const char *string, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		i;
@@ -41,18 +42,18 @@ int	ft_printf(const char *string, ...)
 
 	i = 0;
 	length = 0;
-	va_start(args, string);
-	while (string[i] != '\0')
+	va_start(args, format);
+	while (format[i] != '\0')
 	{
-		if (string[i] == '%')
+		if (format[i] == '%')
 		{
 			i++;
-			ft_printf_checker(string[i], &args, &length, &i);
+			ft_printf_checker(format[i], &args, &length, &i);
 			i++;
 		}
 		else
 		{
-			ft_putchar_len((char)string[i], &length);
+			ft_putchar_len((char)format[i], &length);
 			i++;
 		}
 	}
